@@ -1,0 +1,35 @@
+
+To align the "Blog" text in the center of the image, you can make a few modifications to your HTML and CSS. You are using absolute positioning for the text, which is fine, but your current transform property values are incorrect. Here's the corrected code:
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            width: 100%;
+            text-align: center;
+            position: relative; /* Add this to make positioning relative to the container */
+        }
+
+        .image {
+            max-width: 100%;
+            height: 10%;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 3px 3px 5px #888;
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Adjust the transformation values */
+            color: white;
+            font-size: 50px;
+        }
+    </style>
+</head>
